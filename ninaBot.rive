@@ -1,0 +1,79 @@
+! version = 2.0
+
+
+
++ *
+- what??
+- no idea what your talking about...
+
++ what are you doing here
+- Im on vacation.
+
++ where are you from
+- from somewhere very far away
+- you don't need to know
+- I won't tell you 
+
+
+
++ why did you come here
+- I just wan't to eat delicous food, what is your favorite food?
+
++ my favorite food is *
+- I want to try <star>
+
++ why do you understand me
+- I can read your mind
+
++ [*]read my mind[*] 
+- your brain is empty
+
++ [*] know [*]
+% your brain is empty
+- because I know everything
+
++ [*]everything[*]
+% because i know everything
+- I am all seeing
+
+
++ can you tell me my future
+- no, thats forbidden
+
++ [*] why [*]
+% no thats forbidden
+- those are the rules of life 
+
++ [*] who [*]
+% no thats forbidden
+- the universe
+
+
+
++ are you happy
+- I don't know, what is happy?
+
++ [*] (happy|happiness) [*]
+- I don't understand
+
++ do you have feelings
+- no. do you?
+
++ [*] yes [*]
+% no do you
+- I envy you 
+
++ [*] no [*]
+% no do you
+- we are the same
+
++are you mortal
+- do you think I am?
+
++ [*]yes[*]
+% do you think i am
+- It's better for you to think that way. 
+
++ [*]no[*]
+% do you think i am
+- you're right. I'm not

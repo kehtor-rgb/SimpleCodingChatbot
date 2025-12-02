@@ -1,0 +1,14 @@
+// chatbot's brain
+
+//! var num = 3755
+
++ set #
+- <set num=<star>>
+
++ #
+* <star> > <get num> => pick a lower number
+* <star> < <get num> => pick a higher number
+* <star> == <get num> => You got it!
+
++ *
+- Guess a number between 0 and 9999

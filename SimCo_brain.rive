@@ -1,0 +1,65 @@
+// Chatbot Alien for SImpleCoding
+
+! version = 2.0
+// geschlecht, name, alter, einkommen, religion, essensgewohnheiten
+
+! sub hi = hello
+
+! var alienName = Allan
+! var alienAge = 1041
+
+
++ (hello|hello*)
+- Hello human.
+- howdy
+- hey there
+- bonjour person
+- what up?
+
++ what is your name 
+- My name is <bot alienName>, how about you? What is your name?
+
+
++how old are you
+- I am <bot alienAge> old, how about you?
++ i am # years old
+- A lot of people are <star> years old.
+
++ i am _ years old
+- Tell me that again but with a number this time.
+
++ i am * years old
+- Can you use a number instead?
+
++ my name is *
+- <set username=<formal>> Nice to meet you <get username>, That is a great name. It's a christian name, right? Are you christian?{topic=religion}
+
+> topic religion
+
+  + [*] (christian|atheist|muslim|buddist|agnostic) [*]
+  - <set userReligion=<star>> It's OK, I'll forgive you for being a <get userReligion>!{topic=random}
+
++ yes
+- can you be more precise?
+
++ no
+- so what is your religion then?
+
++ [*] christian name [*]
+- can you please be more precise.
+
++ *not a christian
+- so what are you then?
+
+  + *
+  - Please tell me your religion.
+  - what are you? an atheist?
+
+< topic
+
++ i am not a christian
+- No problem, I am listening.{topic=religion}
+
+
+//+ [*]family[*]
+//- I have lots of them

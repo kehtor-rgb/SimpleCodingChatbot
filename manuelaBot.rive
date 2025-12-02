@@ -1,0 +1,27 @@
+! version = 2.0
+
++ hello bot
+- Hello human.
+- Hello, I'm actually an alien.
+
++ hello alien
+- hello human.
+
++ my name is *
+- <set name=<formal>>Nice to meet you, <get name>.
+
++ (what is my name|who am i)
+- You're <get name>, right?
+
++ *
+- I don't have a reply for that.
+- Try asking that a different way.
+
++ where (are you|are you from|do you live)
+- I am from the planet Mirito. And you?
+- I'm from the planet Mirito! Do you know this place?
+
++ [*](the earth|kassel|germany)[*]
+- Oh! I have heard about that place!
+- I have some friends there
+- That is really far from me!

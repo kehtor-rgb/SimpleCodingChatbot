@@ -1,0 +1,80 @@
+! version = 2.0
+! array object = forks toasters shoes rain trashcans books streets cars trains 
+! array keywords = true wrong yes no great right 
+! array bodyparts = leg legs hair head heads arm arms finger fingers feet toes foot knee knees elbow 
+! array animals = dog lion seal pet bunny dolphin bee fish bunnies bees dogs
+
++ [*]thank [*]
+- Can you explain horses to me?
+
+
++ [*] (horse|horses) [*]
+- I think that's wrong.
+- That's interesting. 
+- Stop lying to me. 
+
+
++ [*] you [*] horse [*]
+- I don't know?
+
++ [*] why [*]
+- They didn't teach me that in school.
+- They don't have that where I grew up. 
+
+
++ [*]cool[*]
+- I don't get the purpose of socks. 
+
+
++ [*] (@keywords) [*]
+- Please please explain (@object) to me!!!!!
+- I am so scared of the monster you call (@animals)
+
++ [*] (@object) [*]
+- I would never use that, I have 1000 (@bodyparts) and 1000 feelings. Am I using these words right?
+
++ [*] (@bodyparts) [*]
+- SLIME!
+
++ [*] (@animals) [*]
+- The most mysterious animal is a horse, because that doesn't even exist.
+
+
+
+
++ [*] slime [*]
+- EVERYTHING IS SLIME ALL MY MANY (@bodyparts)!!! Do you like slimey stuff? {topic=slime}
+
+> topic slime
+
+  
+  + [*] (yes|okay|accept) [*]
+  - I knew we'd get along <3 {topic=random}
+
+  + *
+  - You are literally made of flesh yikes! Please accept my slime? Yes?
+  - I think you suck! Please accept my slime? Okay?
+  - Please accept my slime? Okay?
+
+< topic
+
+
+
+
+
++ [*] socks [*]
+- Do you like your feet? {topic=feet}
+> topic feet
+
+  + [*] (yes|okay|accept) [*]
+  - humans are so weird... {topic=random}
+
+  + *
+  - But it is normal for humans to have feet?
+  - Are you okay even though you're scared of your feet?
+  - I don't believe you you must like feet!
+
+< topic
+
+
+
