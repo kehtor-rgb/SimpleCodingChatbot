@@ -1,5 +1,5 @@
 
-let randomCol;
+
 
 // const OLLAMA_URL = "http://192.168.1.206:11434/api/generate";
 // const MODEL = "mistral-nemo:12b";
@@ -9,10 +9,38 @@ const OLLAMA_URL = "http://localhost:11434/api/generate";
 const MODEL = "gemma3";
 const SYSTEM_PROMPT = "You are an alien from a distant planet and you insist on finding out your conversational partners name, religion, sex and nationality, however you do no want to revieal this at once, beacuse you fear that your counterpart will enter a state of refusal. You are very sly and cunning in retrieving this inforation. If you can't get a straight answer you will try to infer this data. If you are asked about what you have found out so far you give a straight answer."
 
+let botInput;
+let randomCol;
+var spRec = new p5.SpeechRec(); // new P5.SpeechRec object
+spRec.continuous = true; // do continuous recognition
+spRec.interimResults = true; // allow partial recognition (faster, less accurate)
+
+//var spRec = new p5.SpeechRec();
+//spRec
+//spRec.onResult = showResult; // speech recognition object (will prompt for mic access)
+
 
 function setup(){
     createCanvas(300, 300);
     background(200);
+
+  // Speech
+    //var foo = new p5.Speech(); // speech synthesis object
+    // foo.speak('hi there'); // say something
+
+    
+    spRec.onResult = showResult; // bind callback function to trigger when speech is recognized
+    spRec.start(); // start listening
+
+    function showResult()
+    {
+     // console.log(foo.resultString); // log the result
+      output.html(spRec.resultString);
+      botInput= spRec.resultString;
+      bot.reply("local-user", botInput).then(parseBotResponse);
+    }
+
+  // End Speech
 
     let brainScripts = ['SimCo_Brain.rive'];
     let bot = new RiveScript();
@@ -27,6 +55,7 @@ function setup(){
     function brainReady(){
         console.log("Chatbot ready");
         bot.sortReplies();
+        
     }
 
     function BrainError(){
@@ -45,14 +74,16 @@ function setup(){
     //Then Displays the Reply.
     async function parseBotResponse(reply){
           if (reply == "ERR: No Reply Matched"){
-            reply = await queryOllama()
+            reply = await queryOllama();
           }
           output.html(reply);
+          
     }
 
     //Posts the User Input to Ollama and Returns a Promise of the Reply.
     async function queryOllama() {
-      let prompt = user_input.value();
+      //let prompt = user_input.value();
+      let prompt = botInput;
       if (prompt.trim() === '') return;
       
       try {
